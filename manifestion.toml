@@ -2,7 +2,7 @@ id = "me.loaforc.questpinning"
 name = "QuestPinning"
 description = "A simple QOL mod that lets you pin quests to the main hud."
 version = "1.0.4"
-homepage = "https://github.com/LoafOrc"
+homepage = "https://github.com/LoafOrc/QuestPinning"
 author = "loaforc"
 
 icon = "thunderstore/icon.png"
