@@ -1,0 +1,12 @@
+.idea/
+.vs/
+*.user
+/local
+
+QuestPinning/bin/
+QuestPinning/obj/
+
+project/.import/
+
+manifestation.exe
+manifestation/

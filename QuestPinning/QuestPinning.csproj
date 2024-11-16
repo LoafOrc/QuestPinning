@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <AssemblySearchPaths>$(AssemblySearchPaths);$(GDWeavePath)/core</AssemblySearchPaths>
+        <Version>1.0.3</Version>
+        <AssemblyName>me.loaforc.questpinning</AssemblyName>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="GDWeave" Private="false"/>
+        <Reference Include="Serilog" Private="false"/>
+    </ItemGroup>
+
+    <PropertyGroup>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>embedded</DebugType>
+        <PathMap>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)'))=./</PathMap>
+    </PropertyGroup>
+    
+    <Target Name="CopyToGDWeaveModsFolder" AfterTargets="PostBuildEvent" Condition="'$(GDWeavePath)' != '' And '$(Configuration)' == 'Debug'">
+        <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GDWeavePath)\mods\QuestPinning"/>
+        <Copy SourceFiles="$(SolutionDir)\manifest.json" DestinationFolder="$(GDWeavePath)\mods\QuestPinning"/>
+    </Target>
+</Project>

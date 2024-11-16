@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://mods/me.loaforc.questpinning/scenes/reset_pins.gd" type="Script" id=1]
+
+[node name="Button" type="Button"]
+anchor_left = -0.5
+anchor_right = -0.5
+margin_left = 526.0
+margin_top = 28.0
+margin_right = 666.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 140, 0 )
+text = "CLEAR PINS"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="pressed" from="." to="." method="_on_button_pressed"]

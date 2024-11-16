@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://mods/me.loaforc.questpinning/textures/unpinned.png" type="Texture" id=1]
+[ext_resource path="res://mods/me.loaforc.questpinning/textures/pinned.png" type="Texture" id=2]
+[ext_resource path="res://mods/me.loaforc.questpinning/textures/unpinned_hover.png" type="Texture" id=3]
+[ext_resource path="res://mods/me.loaforc.questpinning/scenes/pin_button.gd" type="Script" id=4]
+
+[node name="pin_button" type="TextureButton"]
+anchor_left = 0.995
+anchor_top = 0.011
+anchor_right = 1.0
+anchor_bottom = 0.474
+margin_left = -38.0
+margin_top = 1.0
+margin_right = -9.0
+margin_bottom = -9.0
+focus_mode = 1
+toggle_mode = true
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
+expand = true
+stretch_mode = 4
+script = ExtResource( 4 )
+
+[connection signal="mouse_entered" from="." to="." method="_on_focus"]
+[connection signal="mouse_exited" from="." to="." method="_on_blur"]
+[connection signal="toggled" from="." to="." method="_on_toggle"]
